@@ -1,8 +1,3 @@
-CREATE TABLE genre (
-    id int AUTO_INCREMENT PRIMARY KEY,
-    genre_name varchar(30) NOT NULL
-);
-
 CREATE TABLE movie (
     id int AUTO_INCREMENT PRIMARY KEY,
     title varchar(100) NOT NULL,
@@ -13,6 +8,21 @@ CREATE TABLE movie (
     actors_cat varchar(255),
     description text,
     trailer_url varchar(100)
+);
+
+CREATE TABLE genre (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    genre_name varchar(30) NOT NULL
+);
+
+CREATE TABLE genre_movie (
+    genre_id int,
+    movie_id int,
+    PRIMARY KEY (genre_id, movie_id),
+    CONSTRAINT fk_genre FOREIGN KEY (genre_id)
+    REFERENCES genre (id),
+    CONSTRAINT fk_movie FOREIGN KEY (movie_id)
+    REFERENCES movie (id)
 );
 
 CREATE TABLE event (
