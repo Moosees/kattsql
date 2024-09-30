@@ -20,3 +20,13 @@ CREATE TABLE event (
     title varchar(30) NOT NULL,
     description text NOT NULL
 );
+
+CREATE TABLE event_movie (
+    event_id int,
+    movie_id int,
+    PRIMARY KEY (event_id, movie_id),
+    CONSTRAINT fk_event FOREIGN KEY (event_id)
+    REFERENCES event (id),
+    CONSTRAINT fk_movie FOREIGN KEY (movie_id)
+    REFERENCES movie (id)
+);
