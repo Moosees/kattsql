@@ -14,3 +14,9 @@ CREATE TABLE movie (
     description text,
     trailer_url varchar(100)
 );
+
+CREATE TABLE event (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    title varchar(30) NOT NULL,
+    description text NOT NULL
+);
