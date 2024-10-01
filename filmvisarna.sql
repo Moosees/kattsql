@@ -45,4 +45,10 @@ CREATE TABLE ticket (
     id int AUTO_INCREMENT PRIMARY KEY,
     ticket_name varchar(30) NOT NULL,
     price int NOT NULL
-)
+);
+
+CREATE TABLE auditorium (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    auditorium_name varchar(30) NOT NULL,
+    description text
+);
