@@ -40,3 +40,9 @@ CREATE TABLE event_movie (
     CONSTRAINT fk_movie FOREIGN KEY (movie_id)
     REFERENCES movie (id)
 );
+
+CREATE TABLE ticket (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    ticket_name varchar(30) NOT NULL,
+    price int NOT NULL
+)
