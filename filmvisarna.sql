@@ -52,3 +52,12 @@ CREATE TABLE auditorium (
     auditorium_name varchar(30) NOT NULL,
     description text
 );
+
+CREATE TABLE seat (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    auditorium_id int NOT NULL,
+    seat_row int NOT NULL,
+    seat_num int NOT NULL,
+    CONSTRAINT fk_auditorium FOREIGN KEY (auditorium_id)
+    REFERENCES auditorium (id)
+)
