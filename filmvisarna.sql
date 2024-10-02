@@ -69,7 +69,7 @@ CREATE TABLE screening (
     auditorium_id int NOT NULL,
     CONSTRAINT fk_movie FOREIGN KEY (movie_id)
     REFERENCES movie (id),
-    CONSTRAINT fk_auditorium FOREIGN KEY (fk_auditorium)
+    CONSTRAINT fk_auditorium FOREIGN KEY (auditorium_id)
     REFERENCES auditorium (id)
 );
 
@@ -84,7 +84,7 @@ CREATE TABLE reservation (
     reservation_num varchar(20),
     member_id int NOT NULL,
     screening_id int NOT NULL,
-    CONSTRAINT fk_member FOREIGN KEY (user_id)
+    CONSTRAINT fk_member FOREIGN KEY (member_id)
     REFERENCES member (id),
     CONSTRAINT fk_screening FOREIGN KEY (screening_id)
     REFERENCES screening (id)
