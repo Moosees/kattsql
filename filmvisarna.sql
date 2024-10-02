@@ -128,3 +128,11 @@ VALUES
     0, 'Katten på havet', 322, null, '2007-01-01', 'Gertrude', 'Inte Yves, Poe',
     'Katten seglar', 'youtube.com'
 );
+
+INSERT INTO genre (id, genre_name) VALUES
+(0, 'Action'),
+(0, 'Rysare');
+
+INSERT INTO genre_movie (genre_id, movie_id) VALUES
+(1, 2),
+(2, 1);
