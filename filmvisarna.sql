@@ -172,3 +172,27 @@ INSERT INTO screening (id, start_time, movie_id, auditorium_id) VALUES
 INSERT INTO member (id, member_email, member_password) VALUES
 (0, 'Yves', 'yves@yves.yves', '123'),
 (0, 'Gertrude', 'gertrude@gert.rude', '123');
+
+INSERT INTO reservation (id, reservation_num, member_id, screening_id) VALUES
+(0, '653GGG', 1, 5),
+(0, 'UIF525', 1, 6),
+(0, '963SAA', 2, 2),
+(0, 'TRRrBb', 2, 5);
+
+INSERT INTO reservation_seat (reservation_id, seat_id) VALUES
+(1, 8),
+(2, 9),
+(3, 6),
+(3, 1),
+(4, 3),
+(4, 4),
+(4, 5);
+
+INSERT INTO reservation_ticket
+(reservation_id, ticket_id, ticket_quantity) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 1, 1),
+(3, 2, 1),
+(4, 1, 1),
+(4, 2, 2);
