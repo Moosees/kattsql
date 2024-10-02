@@ -142,3 +142,10 @@ INSERT INTO event (id, title, description) VALUES
 
 INSERT INTO event_movie (event_id, movie_id) VALUES
 (1, 2);
+
+INSERT INTO ticket (id, ticket_name, price) VALUES
+(0, 'Vuxen', 321),
+(0, 'Barn', 123);
+
+INSERT INTO auditorium (id, auditorium_name, description) VALUES
+(0, 'Stora salen', 'Den är stor');
