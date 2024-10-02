@@ -19,10 +19,8 @@ CREATE TABLE genre_movie (
     genre_id int,
     movie_id int,
     PRIMARY KEY (genre_id, movie_id),
-    CONSTRAINT fk_genre FOREIGN KEY (genre_id)
-    REFERENCES genre (id),
-    CONSTRAINT fk_movie FOREIGN KEY (movie_id)
-    REFERENCES movie (id)
+    FOREIGN KEY (genre_id) REFERENCES genre (id),
+    FOREIGN KEY (movie_id) REFERENCES movie (id)
 );
 
 CREATE TABLE event (
@@ -35,10 +33,8 @@ CREATE TABLE event_movie (
     event_id int,
     movie_id int,
     PRIMARY KEY (event_id, movie_id),
-    CONSTRAINT fk_event FOREIGN KEY (event_id)
-    REFERENCES event (id),
-    CONSTRAINT fk_movie FOREIGN KEY (movie_id)
-    REFERENCES movie (id)
+    FOREIGN KEY (event_id) REFERENCES event (id),
+    FOREIGN KEY (movie_id) REFERENCES movie (id)
 );
 
 CREATE TABLE ticket (
@@ -58,8 +54,7 @@ CREATE TABLE seat (
     auditorium_id int NOT NULL,
     seat_row int NOT NULL,
     seat_num int NOT NULL,
-    CONSTRAINT fk_auditorium FOREIGN KEY (auditorium_id)
-    REFERENCES auditorium (id)
+    FOREIGN KEY (auditorium_id) REFERENCES auditorium (id)
 );
 
 CREATE TABLE screening (
@@ -67,10 +62,8 @@ CREATE TABLE screening (
     start_time datetime NOT NULL,
     movie_id int NOT NULL,
     auditorium_id int NOT NULL,
-    CONSTRAINT fk_movie FOREIGN KEY (movie_id)
-    REFERENCES movie (id),
-    CONSTRAINT fk_auditorium FOREIGN KEY (auditorium_id)
-    REFERENCES auditorium (id)
+    FOREIGN KEY (movie_id) REFERENCES movie (id),
+    FOREIGN KEY (auditorium_id) REFERENCES auditorium (id)
 );
 
 CREATE TABLE member (
@@ -84,20 +77,16 @@ CREATE TABLE reservation (
     reservation_num varchar(20),
     member_id int NOT NULL,
     screening_id int NOT NULL,
-    CONSTRAINT fk_member FOREIGN KEY (member_id)
-    REFERENCES member (id),
-    CONSTRAINT fk_screening FOREIGN KEY (screening_id)
-    REFERENCES screening (id)
+    FOREIGN KEY (member_id) REFERENCES member (id),
+    FOREIGN KEY (screening_id) REFERENCES screening (id)
 );
 
 CREATE TABLE reservation_seat (
     reservation_id int NOT NULL,
     seat_id int NOT NULL,
     PRIMARY KEY (reservation_id, seat_id),
-    CONSTRAINT fk_reservation FOREIGN KEY (reservation_id)
-    REFERENCES reservation (id),
-    CONSTRAINT fk_seat FOREIGN KEY (seat_id)
-    REFERENCES seat (id)
+    FOREIGN KEY (reservation_id) REFERENCES reservation (id),
+    FOREIGN KEY (seat_id) REFERENCES seat (id)
 );
 
 CREATE TABLE reservation_ticket (
@@ -105,10 +94,8 @@ CREATE TABLE reservation_ticket (
     ticket_id int NOT NULL,
     ticket_quantity int NOT NULL,
     PRIMARY KEY (reservation_id, ticket_id),
-    CONSTRAINT fk_reservation FOREIGN KEY (reservation_id)
-    REFERENCES reservation (id),
-    CONSTRAINT fk_ticket FOREIGN KEY (ticket_id)
-    REFERENCES ticket (id)
+    FOREIGN KEY (reservation_id) REFERENCES reservation (id),
+    FOREIGN KEY (ticket_id) REFERENCES ticket (id)
 );
 
 INSERT INTO movie
