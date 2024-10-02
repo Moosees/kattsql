@@ -83,14 +83,11 @@ CREATE TABLE reservation (
     id int AUTO_INCREMENT PRIMARY KEY,
     reservation_num varchar(20),
     member_id int NOT NULL,
-    auditorium_id int NOT NULL,
-    movie_id int NOT NULL,
+    screening_id int NOT NULL,
     CONSTRAINT fk_member FOREIGN KEY (user_id)
     REFERENCES member (id),
-    CONSTRAINT fk_auditorium FOREIGN KEY (auditorium_id)
-    REFERENCES auditorium (id),
-    CONSTRAINT fk_movie FOREIGN KEY (movie_id)
-    REFERENCES movie (id)
+    CONSTRAINT fk_screening FOREIGN KEY (screening_id)
+    REFERENCES screening (id)
 );
 
 CREATE TABLE reservation_seat (
