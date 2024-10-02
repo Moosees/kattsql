@@ -92,3 +92,13 @@ CREATE TABLE reservation (
     CONSTRAINT fk_movie FOREIGN KEY (movie_id)
     REFERENCES movie (id)
 );
+
+CREATE TABLE reservation_seat (
+    reservation_id int NOT NULL,
+    seat_id int NOT NULL,
+    PRIMARY KEY (reservation_id, seat_id),
+    CONSTRAINT fk_reservation FOREIGN KEY (reservation_id)
+    REFERENCES reservation (id),
+    CONSTRAINT fk_seat FOREIGN KEY (seat_id)
+    REFERENCES seat (id)
+)
