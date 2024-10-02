@@ -72,3 +72,9 @@ CREATE TABLE screening (
     CONSTRAINT fk_auditorium FOREIGN KEY (fk_auditorium)
     REFERENCES auditorium (id)
 );
+
+CREATE TABLE member (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    member_email varchar(100),
+    member_password varchar(255)
+);
