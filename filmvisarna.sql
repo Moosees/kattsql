@@ -101,4 +101,15 @@ CREATE TABLE reservation_seat (
     REFERENCES reservation (id),
     CONSTRAINT fk_seat FOREIGN KEY (seat_id)
     REFERENCES seat (id)
-)
+);
+
+CREATE TABLE reservation_ticket (
+    reservation_id int NOT NULL,
+    ticket_id int NOT NULL,
+    ticket_quantity int NOT NULL,
+    PRIMARY KEY (reservation_id, ticket_id),
+    CONSTRAINT fk_reservation FOREIGN KEY (reservation_id)
+    REFERENCES reservation (id),
+    CONSTRAINT fk_ticket FOREIGN KEY (ticket_id)
+    REFERENCES ticket (id)
+);
