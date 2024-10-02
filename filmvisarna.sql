@@ -113,3 +113,18 @@ CREATE TABLE reservation_ticket (
     CONSTRAINT fk_ticket FOREIGN KEY (ticket_id)
     REFERENCES ticket (id)
 );
+
+INSERT INTO movie
+(
+    id, title, play_time, original_title, year_recorded,
+    director, actors_cat, description, trailer_url
+)
+VALUES
+(
+    0, 'Katten i stan', 123, null, '2000-01-01', 'Poe', 'Yves, Gertrude',
+    'Katten är i stan', 'youtube.com'
+),
+(
+    0, 'Katten på havet', 322, null, '2007-01-01', 'Gertrude', 'Inte Yves, Poe',
+    'Katten seglar', 'youtube.com'
+);
