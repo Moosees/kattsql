@@ -157,8 +157,8 @@ INSERT INTO screening (id, start_time, movie_id, auditorium_id) VALUES
 (0, '2024-10-22 21:30:00', 1, 1);
 
 INSERT INTO member (id, member_email, member_password) VALUES
-(0, 'Yves', 'yves@yves.yves', '123'),
-(0, 'Gertrude', 'gertrude@gert.rude', '123');
+(0, 'yves@yves.yves', '123'),
+(0, 'gertrude@gert.rude', '123');
 
 INSERT INTO reservation (id, reservation_num, member_id, screening_id) VALUES
 (0, '653GGG', 1, 5),
