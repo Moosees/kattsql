@@ -136,3 +136,9 @@ INSERT INTO genre (id, genre_name) VALUES
 INSERT INTO genre_movie (genre_id, movie_id) VALUES
 (1, 2),
 (2, 1);
+
+INSERT INTO event (id, title, description) VALUES
+(0, 'Kattsommar', 'Kallt men varmt');
+
+INSERT INTO event_movie (event_id, movie_id) VALUES
+(1, 2);
