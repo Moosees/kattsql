@@ -171,3 +171,7 @@ INSERT INTO screening (id, start_time, movie_id, auditorium_id) VALUES
 (0, '2024-10-21 18:00:00', 2, 1),
 (0, '2024-10-22 19:00:00', 1, 1),
 (0, '2024-10-22 21:30:00', 1, 1);
+
+INSERT INTO member (id, member_email, member_password) VALUES
+(0, 'Yves', 'yves@yves.yves', '123'),
+(0, 'Gertrude', 'gertrude@gert.rude', '123');
