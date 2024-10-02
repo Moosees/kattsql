@@ -60,4 +60,15 @@ CREATE TABLE seat (
     seat_num int NOT NULL,
     CONSTRAINT fk_auditorium FOREIGN KEY (auditorium_id)
     REFERENCES auditorium (id)
-)
+);
+
+CREATE TABLE screening (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    start_time datetime NOT NULL,
+    movie_id int NOT NULL,
+    auditorium_id int NOT NULL,
+    CONSTRAINT fk_movie FOREIGN KEY (movie_id)
+    REFERENCES movie (id),
+    CONSTRAINT fk_auditorium FOREIGN KEY (fk_auditorium)
+    REFERENCES auditorium (id)
+);
