@@ -92,10 +92,9 @@ CREATE TABLE res_seat_screen (
 );
 
 CREATE TABLE reservation_ticket (
+    id int AUTO_INCREMENT PRIMARY KEY,
     reservation_id int NOT NULL,
     ticket_id int NOT NULL,
-    ticket_quantity int NOT NULL,
-    PRIMARY KEY (reservation_id, ticket_id),
     FOREIGN KEY (reservation_id) REFERENCES reservation (id),
     FOREIGN KEY (ticket_id) REFERENCES ticket (id)
 );
@@ -178,10 +177,11 @@ INSERT INTO res_seat_screen (reservation_id, seat_id, screening_id) VALUES
 (4, 5, 5);
 
 INSERT INTO reservation_ticket
-(reservation_id, ticket_id, ticket_quantity) VALUES
-(1, 1, 1),
-(2, 2, 1),
-(3, 1, 1),
-(3, 2, 1),
-(4, 1, 1),
-(4, 2, 2);
+(reservation_id, ticket_id) VALUES
+(1, 1),
+(2, 2),
+(3, 1),
+(3, 2),
+(4, 1),
+(4, 2),
+(4, 2);
