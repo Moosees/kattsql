@@ -1,7 +1,7 @@
 CREATE TABLE movie (
-    id int AUTO_INCREMENT PRIMARY KEY,
+    id int unsigned AUTO_INCREMENT PRIMARY KEY,
     title varchar(100) NOT NULL,
-    play_time int NOT NULL,
+    play_time smallint unsigned NOT NULL,
     original_title varchar(100),
     year_recorded date,
     director varchar(50),
@@ -11,63 +11,63 @@ CREATE TABLE movie (
 );
 
 CREATE TABLE genre (
-    id int AUTO_INCREMENT PRIMARY KEY,
+    id int unsigned AUTO_INCREMENT PRIMARY KEY,
     genre_name varchar(30) NOT NULL
 );
 
 CREATE TABLE genre_movie (
-    genre_id int,
-    movie_id int,
+    genre_id int unsigned,
+    movie_id int unsigned,
     PRIMARY KEY (genre_id, movie_id),
     FOREIGN KEY (genre_id) REFERENCES genre (id),
     FOREIGN KEY (movie_id) REFERENCES movie (id)
 );
 
 CREATE TABLE event (
-    id int AUTO_INCREMENT PRIMARY KEY,
+    id int unsigned AUTO_INCREMENT PRIMARY KEY,
     title varchar(30) NOT NULL,
     description text NOT NULL
 );
 
 CREATE TABLE event_movie (
-    event_id int,
-    movie_id int,
+    event_id int unsigned,
+    movie_id int unsigned,
     PRIMARY KEY (event_id, movie_id),
     FOREIGN KEY (event_id) REFERENCES event (id),
     FOREIGN KEY (movie_id) REFERENCES movie (id)
 );
 
 CREATE TABLE ticket (
-    id int AUTO_INCREMENT PRIMARY KEY,
+    id int unsigned AUTO_INCREMENT PRIMARY KEY,
     ticket_name varchar(30) NOT NULL,
-    price int NOT NULL
+    price smallint unsigned NOT NULL
 );
 
 CREATE TABLE auditorium (
-    id int AUTO_INCREMENT PRIMARY KEY,
+    id int unsigned AUTO_INCREMENT PRIMARY KEY,
     auditorium_name varchar(30) NOT NULL,
     description text
 );
 
 CREATE TABLE seat (
-    id int AUTO_INCREMENT PRIMARY KEY,
-    auditorium_id int NOT NULL,
-    seat_row int NOT NULL,
-    seat_num int NOT NULL,
+    id int unsigned AUTO_INCREMENT PRIMARY KEY,
+    auditorium_id int unsigned,
+    seat_row int unsigned,
+    seat_num int unsigned,
     FOREIGN KEY (auditorium_id) REFERENCES auditorium (id)
 );
 
 CREATE TABLE screening (
-    id int AUTO_INCREMENT PRIMARY KEY,
+    id int unsigned AUTO_INCREMENT PRIMARY KEY,
     start_time datetime NOT NULL,
-    movie_id int NOT NULL,
-    auditorium_id int NOT NULL,
+    movie_id int unsigned,
+    auditorium_id int unsigned,
     FOREIGN KEY (movie_id) REFERENCES movie (id),
     FOREIGN KEY (auditorium_id) REFERENCES auditorium (id)
 );
 
 CREATE TABLE member (
-    id int AUTO_INCREMENT PRIMARY KEY,
+    id int unsigned AUTO_INCREMENT PRIMARY KEY,
     member_email varchar(100) UNIQUE NOT NULL,
     member_password varchar(255),
     first_name varchar(100),
@@ -75,18 +75,18 @@ CREATE TABLE member (
 );
 
 CREATE TABLE reservation (
-    id int AUTO_INCREMENT PRIMARY KEY,
-    reservation_num varchar(20),
-    member_id int NOT NULL,
-    screening_id int NOT NULL,
+    id int unsigned AUTO_INCREMENT PRIMARY KEY,
+    reservation_num varchar(20) NOT NULL,
+    member_id int unsigned,
+    screening_id int unsigned,
     FOREIGN KEY (member_id) REFERENCES member (id),
     FOREIGN KEY (screening_id) REFERENCES screening (id)
 );
 
 CREATE TABLE res_seat_screen (
-    reservation_id int NOT NULL,
-    seat_id int NOT NULL,
-    screening_id int NOT NULL,
+    reservation_id int unsigned,
+    seat_id int unsigned,
+    screening_id int unsigned,
     PRIMARY KEY (seat_id, screening_id),
     FOREIGN KEY (reservation_id) REFERENCES reservation (id),
     FOREIGN KEY (seat_id) REFERENCES seat (id),
@@ -94,9 +94,9 @@ CREATE TABLE res_seat_screen (
 );
 
 CREATE TABLE reservation_ticket (
-    id int AUTO_INCREMENT PRIMARY KEY,
-    reservation_id int NOT NULL,
-    ticket_id int NOT NULL,
+    id int unsigned AUTO_INCREMENT PRIMARY KEY,
+    reservation_id int unsigned,
+    ticket_id int unsigned,
     FOREIGN KEY (reservation_id) REFERENCES reservation (id),
     FOREIGN KEY (ticket_id) REFERENCES ticket (id)
 );
