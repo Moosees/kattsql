@@ -81,12 +81,14 @@ CREATE TABLE reservation (
     FOREIGN KEY (screening_id) REFERENCES screening (id)
 );
 
-CREATE TABLE reservation_seat (
+CREATE TABLE res_seat_screen (
     reservation_id int NOT NULL,
     seat_id int NOT NULL,
-    PRIMARY KEY (reservation_id, seat_id),
+    screening_id int NOT NULL,
+    PRIMARY KEY (seat_id, screening_id),
     FOREIGN KEY (reservation_id) REFERENCES reservation (id),
-    FOREIGN KEY (seat_id) REFERENCES seat (id)
+    FOREIGN KEY (seat_id) REFERENCES seat (id),
+    FOREIGN KEY (screening_id) REFERENCES screening (id)
 );
 
 CREATE TABLE reservation_ticket (
@@ -166,14 +168,14 @@ INSERT INTO reservation (id, reservation_num, member_id, screening_id) VALUES
 (0, '963SAA', 2, 2),
 (0, 'TRRrBb', 2, 5);
 
-INSERT INTO reservation_seat (reservation_id, seat_id) VALUES
-(1, 8),
-(2, 9),
-(3, 6),
-(3, 1),
-(4, 3),
-(4, 4),
-(4, 5);
+INSERT INTO res_seat_screen (reservation_id, seat_id, screening_id) VALUES
+(1, 8, 5),
+(2, 9, 6),
+(3, 6, 2),
+(3, 1, 2),
+(4, 3, 5),
+(4, 4, 5),
+(4, 5, 5);
 
 INSERT INTO reservation_ticket
 (reservation_id, ticket_id, ticket_quantity) VALUES
