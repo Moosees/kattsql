@@ -68,8 +68,10 @@ CREATE TABLE screening (
 
 CREATE TABLE member (
     id int AUTO_INCREMENT PRIMARY KEY,
-    member_email varchar(100),
-    member_password varchar(255)
+    member_email varchar(100) UNIQUE NOT NULL,
+    member_password varchar(255),
+    first_name varchar(100),
+    last_name varchar(100)
 );
 
 CREATE TABLE reservation (
