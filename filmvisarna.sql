@@ -45,8 +45,8 @@ CREATE TABLE ticket (
 
 CREATE TABLE auditorium (
     id int unsigned AUTO_INCREMENT PRIMARY KEY,
-    auditorium_name varchar(30) NOT NULL,
-    description text
+    auditorium_name varchar(30) NOT NULL
+    --description text
 );
 
 CREATE TABLE seat (
