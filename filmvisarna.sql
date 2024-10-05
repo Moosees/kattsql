@@ -1,3 +1,18 @@
+SET @movie_info = '{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Movie info",
+    "description": "Various misc info about a movie",
+    "type": "object",
+    "properties": {
+        "original_title": {"type": "string"},
+        "year_recorded": {"type": "integer"},
+        "director": {"type": "string"},
+        "actors": {"type": "array", "items": {"type": "string"}},
+        "description": {"type": "string"},
+        "trailer": {"type": "string", "description": "A URL to play the movie trailer"}
+    }
+}';
+
 CREATE TABLE movie (
     id int unsigned AUTO_INCREMENT PRIMARY KEY,
     title varchar(100) NOT NULL,
