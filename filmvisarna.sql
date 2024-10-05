@@ -140,8 +140,9 @@ INSERT INTO event_movie (event_id, movie_id) VALUES
 (1, 2);
 
 INSERT INTO ticket (ticket_name, price) VALUES
-('Vuxen', 321),
-('Barn', 123);
+('Vuxen', 140),
+('Barn', 80),
+('Senior', 120);
 
 INSERT INTO auditorium (auditorium_name, description) VALUES
 ('Stora salen', 'Den är stor');
