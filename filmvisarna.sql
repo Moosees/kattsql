@@ -17,12 +17,7 @@ CREATE TABLE movie (
     id int unsigned AUTO_INCREMENT PRIMARY KEY,
     title varchar(100) NOT NULL,
     play_time smallint unsigned NOT NULL,
-    original_title varchar(100),
-    year_recorded date,
-    director varchar(50),
-    actors_cat varchar(255),
-    description text,
-    trailer_url varchar(100)
+    movie_info json
 );
 
 CREATE TABLE genre (
@@ -116,19 +111,14 @@ CREATE TABLE reservation_ticket (
     FOREIGN KEY (ticket_id) REFERENCES ticket (id)
 );
 
-INSERT INTO movie
+INSERT INTO movie (id, title, play_time, movie_info) VALUES
 (
-    id, title, play_time, original_title, year_recorded,
-    director, actors_cat, description, trailer_url
-)
-VALUES
-(
-    0, 'Katten i stan', 123, null, '2000-01-01', 'Poe', 'Yves, Gertrude',
-    'Katten är i stan', 'youtube.com'
+    0, 'Katten i stan', 123,
+    '{"year_recorded": 2000, "director": "Poe", "actors": ["Yves", "Gertrude"], "description": "Katten är i stan", "trailer": "youtube.com"}'
 ),
 (
-    0, 'Katten på havet', 322, null, '2007-01-01', 'Gertrude', 'Inte Yves, Poe',
-    'Katten seglar', 'youtube.com'
+    0, 'Katten på havet', 322,
+    '{"year_recorded": 2007, "director": "Gertrude", "actors": ["Inte Yves", "Poe"], "description": "Katten seglar"}'
 );
 
 INSERT INTO genre (id, genre_name) VALUES
