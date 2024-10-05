@@ -115,68 +115,68 @@ CREATE TABLE reservation_ticket (
     FOREIGN KEY (ticket_id) REFERENCES ticket (id)
 );
 
-INSERT INTO movie (id, title, play_time, movie_info) VALUES
+INSERT INTO movie (title, play_time, movie_info) VALUES
 (
-    0, 'Katten i stan', 123,
+    'Katten i stan', 123,
     '{"year_recorded": 2000, "director": "Poe", "actors": ["Yves", "Gertrude"], "description": "Katten är i stan", "trailer": "youtube.com"}'
 ),
 (
-    0, 'Katten på havet', 322,
+    'Katten på havet', 322,
     '{"year_recorded": 2007, "director": "Gertrude", "actors": ["Inte Yves", "Poe"], "description": "Katten seglar"}'
 );
 
-INSERT INTO genre (id, genre_name) VALUES
-(0, 'Action'),
-(0, 'Rysare');
+INSERT INTO genre (genre_name) VALUES
+('Action'),
+('Rysare');
 
 INSERT INTO genre_movie (genre_id, movie_id) VALUES
 (1, 2),
 (2, 1);
 
-INSERT INTO event (id, title, description) VALUES
-(0, 'Kattsommar', 'Kallt men varmt');
+INSERT INTO event (title, description) VALUES
+('Kattsommar', 'Kallt men varmt');
 
 INSERT INTO event_movie (event_id, movie_id) VALUES
 (1, 2);
 
-INSERT INTO ticket (id, ticket_name, price) VALUES
-(0, 'Vuxen', 321),
-(0, 'Barn', 123);
+INSERT INTO ticket (ticket_name, price) VALUES
+('Vuxen', 321),
+('Barn', 123);
 
-INSERT INTO auditorium (id, auditorium_name, description) VALUES
-(0, 'Stora salen', 'Den är stor');
+INSERT INTO auditorium (auditorium_name, description) VALUES
+('Stora salen', 'Den är stor');
 
-INSERT INTO seat (id, auditorium_id, seat_row, seat_num) VALUES
-(0, 1, 1, 1),
-(0, 1, 1, 2),
-(0, 1, 2, 1),
-(0, 1, 2, 2),
-(0, 1, 2, 3),
-(0, 1, 3, 1),
-(0, 1, 3, 2),
-(0, 1, 3, 3),
-(0, 1, 4, 1),
-(0, 1, 4, 2),
-(0, 1, 4, 3),
-(0, 1, 4, 4);
+INSERT INTO seat (auditorium_id, seat_row, seat_num) VALUES
+(1, 1, 1),
+(1, 1, 2),
+(1, 2, 1),
+(1, 2, 2),
+(1, 2, 3),
+(1, 3, 1),
+(1, 3, 2),
+(1, 3, 3),
+(1, 4, 1),
+(1, 4, 2),
+(1, 4, 3),
+(1, 4, 4);
 
-INSERT INTO screening (id, start_time, movie_id, auditorium_id) VALUES
-(0, '2024-10-19 19:30:00', 1, 1),
-(0, '2024-10-19 22:00:00', 2, 1),
-(0, '2024-10-20 19:30:00', 1, 1),
-(0, '2024-10-21 18:00:00', 2, 1),
-(0, '2024-10-22 19:00:00', 1, 1),
-(0, '2024-10-22 21:30:00', 1, 1);
+INSERT INTO screening (start_time, movie_id, auditorium_id) VALUES
+('2024-10-19 19:30:00', 1, 1),
+('2024-10-19 22:00:00', 2, 1),
+('2024-10-20 19:30:00', 1, 1),
+('2024-10-21 18:00:00', 2, 1),
+('2024-10-22 19:00:00', 1, 1),
+('2024-10-22 21:30:00', 1, 1);
 
-INSERT INTO member (id, member_email, member_password) VALUES
-(0, 'yves@yves.yves', '123'),
-(0, 'gertrude@gert.rude', '123');
+INSERT INTO member (member_email, member_password) VALUES
+('yves@yves.yves', '123'),
+('gertrude@gert.rude', '123');
 
-INSERT INTO reservation (id, reservation_num, member_id, screening_id) VALUES
-(0, '653GGG', 1, 5),
-(0, 'UIF525', 1, 6),
-(0, '963SAA', 2, 2),
-(0, 'TRRrBb', 2, 5);
+INSERT INTO reservation (reservation_num, member_id, screening_id) VALUES
+('653GGG', 1, 5),
+('UIF525', 1, 6),
+('963SAA', 2, 2),
+('TRRrBb', 2, 5);
 
 INSERT INTO res_seat_screen (reservation_id, seat_id, screening_id) VALUES
 (1, 8, 5),
