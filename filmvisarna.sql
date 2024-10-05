@@ -165,7 +165,7 @@ INSERT INTO seat (auditorium_id, seat_row, seat_num) VALUES
 (1, 7, 9), (1, 7, 10), (1, 7, 11), (1, 7, 12),
 (1, 8, 1), (1, 8, 2), (1, 8, 3), (1, 8, 4),
 (1, 8, 5), (1, 8, 6), (1, 8, 7), (1, 8, 8),
-(1, 8, 9), (1, 8, 10), (1, 8, 11), (1, 8, 12),
+(1, 8, 9), (1, 8, 10), (1, 8, 11), (1, 8, 12);
 
 INSERT INTO screening (start_time, movie_id, auditorium_id) VALUES
 ('2024-10-19 19:30:00', 1, 1),
