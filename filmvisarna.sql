@@ -121,8 +121,26 @@ INSERT INTO movie (title, play_time, movie_info) VALUES
     '{"year_recorded": 2000, "director": "Poe", "actors": ["Yves", "Gertrude"], "description": "Katten är i stan", "trailer": "youtube.com"}'
 ),
 (
-    'Katten på havet', 322,
+    'Katten på havet', 193,
     '{"year_recorded": 2007, "director": "Gertrude", "actors": ["Inte Yves", "Poe"], "description": "Katten seglar"}'
+),
+(
+    'Kattparty', 169, null
+),
+(
+    'Familjekatten', 132, null
+),
+(
+    'Katten, återkomsten', 211, null
+),
+(
+    'En katt till farsa', 99, null
+),
+(
+    'En värsting till katt', 88, null
+),
+(
+    'Katt, musikalen', 80, null
 );
 
 INSERT INTO genre (genre_name) VALUES
