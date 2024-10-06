@@ -251,9 +251,41 @@ INSERT INTO screening (start_time, movie_id, auditorium_id) VALUES
 ('2024-11-13 16:00:00', 2, 1),
 ('2024-11-13 20:45:00', 5, 1);
 
-INSERT INTO member (member_email, member_password) VALUES
-('yves@yves.yves', '123'),
-('gertrude@gert.rude', '123');
+INSERT INTO member (member_email, member_password, first_name, last_name) VALUES
+('yves@maila.se', '123', 'Yves', 'Bananums'),
+('gertrude@gertrude.org', '123', 'Gertrude', 'Bananums'),
+('johan.olsson@exempel.se', '123', 'Johan', 'Olsson'),
+('elin.persson@domän.se', '123', 'Elin', 'Persson'),
+('mats.nilsson@webbpost.se', '123', 'Mats', 'Nilsson'),
+('sara.karlsson@tjänst.net', '123', 'Sara', 'Karlsson'),
+('emil.svensson@minemail.org', '123', 'Emil', 'Svensson'),
+('linda.larsson@domän.org', '123', 'Linda', 'Larsson'),
+('oskar.johansson@snabbmail.se', '123', 'Oskar', 'Johansson'),
+('kristin.andersson@online.se', '123', 'Kristin', 'Andersson'),
+('anton.eriksson@brevlåda.com', '123', 'Anton', 'Eriksson');
+
+INSERT INTO member (member_email) VALUES
+('sofie.nilsson@mittdomän.se'),
+('viktor.holm@webbmail.net'),
+('julia.fredriksson@företag.org'),
+('isak.lindgren@affär.net'),
+('agnes.söderberg@tjänst.com'),
+('linnea.hansson@kontor.com'),
+('lucas.berglund@nyemail.org'),
+('hanna.nyström@snabbpost.net'),
+('mia.fransson@domän.net'),
+('gustav.sandberg@företag.com'),
+('ida.wikström@minemail.net'),
+('henrik.lund@webbtjänst.com'),
+('emma.berg@mejla.org'),
+('adam.pettersson@domänmail.com'),
+('alice.sundström@info.se'),
+('leo.ahlgren@företagsmail.org'),
+('klara.ström@tjänst.org'),
+('max.blom@webbemail.net'),
+('vilma.andreasson@internetmail.com'),
+('oskar.dahl@affärsmail.net'),
+('nora.sjölund@onlinemail.se');
 
 INSERT INTO reservation (reservation_num, member_id, screening_id) VALUES
 ('653GGG', 1, 5),
