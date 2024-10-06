@@ -179,8 +179,8 @@ INSERT INTO ticket (ticket_name, price) VALUES
 ('Barn', 80),
 ('Senior', 120);
 
-INSERT INTO auditorium (auditorium_name, description) VALUES
-('Stora salen', 'Den är stor');
+INSERT INTO auditorium (auditorium_name) VALUES
+('Stora salen');
 
 INSERT INTO seat (auditorium_id, seat_row, seat_num) VALUES
 --stora salen
@@ -422,21 +422,7 @@ INSERT INTO reservation (reservation_num, member_id, screening_id) VALUES
 ('H2F8PL', 32, 26),
 ('B1M4XC', 32, 28);
 
-INSERT INTO res_seat_screen (reservation_id, seat_id, screening_id) VALUES
-(1, 8, 5),
-(2, 9, 6),
-(3, 6, 2),
-(3, 1, 2),
-(4, 3, 5),
-(4, 4, 5),
-(4, 5, 5);
+--INSERT INTO res_seat_screen (reservation_id, seat_id, screening_id) VALUES
 
-INSERT INTO reservation_ticket
-(reservation_id, ticket_id) VALUES
-(1, 1),
-(2, 2),
-(3, 1),
-(3, 2),
-(4, 1),
-(4, 2),
-(4, 2);
+--INSERT INTO reservation_ticket
+--(reservation_id, ticket_id) VALUES
