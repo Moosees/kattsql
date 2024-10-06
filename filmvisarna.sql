@@ -117,24 +117,24 @@ CREATE TABLE reservation_ticket (
 
 INSERT INTO movie (title, play_time, movie_info) VALUES
 (
-    'Katten i stan', 123,
+    'Katten i stan', 68,
     '{"year_recorded": 2000, "director": "Poe", "actors": ["Yves", "Gertrude"], "description": "Katten är i stan", "trailer": "youtube.com"}'
 ),
 (
-    'Katten på havet', 193,
+    'Katten på havet', 84,
     '{"year_recorded": 2007, "director": "Gertrude", "actors": ["Inte Yves", "Poe"], "description": "Katten seglar"}'
 ),
 (
-    'Kattparty', 169, null
+    'Kattparty', 112, null
 ),
 (
-    'Familjekatten', 132, null
+    'Familjekatten', 99, null
 ),
 (
-    'Katten, återkomsten', 211, null
+    'Katten, återkomsten', 118, null
 ),
 (
-    'En katt till farsa', 99, null
+    'En katt till farsa', 76, null
 ),
 (
     'En värsting till katt', 88, null
