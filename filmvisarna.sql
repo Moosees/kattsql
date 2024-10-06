@@ -170,7 +170,9 @@ INSERT INTO event (title, description) VALUES
 ('Kattsommar', 'Kallt men varmt');
 
 INSERT INTO event_movie (event_id, movie_id) VALUES
-(1, 2);
+(1, 2),
+(1, 5),
+(1, 8);
 
 INSERT INTO ticket (ticket_name, price) VALUES
 ('Vuxen', 140),
