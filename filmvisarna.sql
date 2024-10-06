@@ -145,11 +145,26 @@ INSERT INTO movie (title, play_time, movie_info) VALUES
 
 INSERT INTO genre (genre_name) VALUES
 ('Action'),
-('Rysare');
+('Rysare'),
+('Fantasy'),
+('Komedi'),
+('Skräck'),
+('Drama'),
+('Dokumentär'),
+('Science fiction');
 
-INSERT INTO genre_movie (genre_id, movie_id) VALUES
+INSERT INTO genre_movie (movie_id, genre_id) VALUES
+(1, 1),
 (1, 2),
-(2, 1);
+(2, 3),
+(3, 5),
+(4, 6),
+(5, 5),
+(5, 8),
+(6, 4),
+(7, 4),
+(8, 8),
+(8, 4);
 
 INSERT INTO event (title, description) VALUES
 ('Kattsommar', 'Kallt men varmt');
