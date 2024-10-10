@@ -180,7 +180,8 @@ INSERT INTO ticket (ticket_name, price) VALUES
 ('Senior', 120);
 
 INSERT INTO auditorium (auditorium_name) VALUES
-('Stora salen');
+('Stora salongen'),
+('Lilla salongen')
 
 INSERT INTO seat (auditorium_id, seat_row, seat_num) VALUES
 --stora salen
