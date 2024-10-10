@@ -183,7 +183,7 @@ INSERT INTO ticket (ticket_name, price) VALUES
 
 INSERT INTO auditorium (auditorium_name) VALUES
 ('Stora salongen'),
-('Lilla salongen')
+('Lilla salongen');
 
 INSERT INTO seat (auditorium_id, seat_row, seat_num) VALUES
 (1, 1, 1), (1, 1, 2), (1, 1, 3), (1, 1, 4),
