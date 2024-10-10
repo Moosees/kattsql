@@ -18,7 +18,7 @@ CREATE TABLE movie (
                     "director": {"type": "string"},
                     "actors": {"type": "array", "items": {"type": "string"}},
                     "description": {"type": "string"},
-                    "trailer": {"type": "string", "description": "A URL to play the movie trailer"}
+                    "trailer": {"type": "string", "description": "A URL to play the movie trailer"},
                     "poster": {"type": "string"}
                 }
             }',
