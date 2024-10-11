@@ -1,7 +1,7 @@
 -- procedure to create a booking and a member if they don't exist
 DELIMITER //
 
-CREATE PROCEDURE create_reservation (IN email varchar(100), IN screeningId int, OUT reservationId char(6)) 
+CREATE PROCEDURE create_reservation (IN email varchar(100), IN screeningId int unsigned, OUT reservationId int unsigned)
 BEGIN
 	DECLARE randomResNum CHAR(6) DEFAULT UPPER(SUBSTRING(TO_BASE64(MD5(RAND())), 1 + RAND(), 6));
 	DECLARE memberId int;
