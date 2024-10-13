@@ -4,14 +4,14 @@ DELIMITER //
 CREATE PROCEDURE create_reservation (IN email varchar(100), IN screeningId int unsigned, OUT reservationId int unsigned)
 BEGIN
 	DECLARE randomResNum CHAR(6) DEFAULT UPPER(SUBSTRING(TO_BASE64(MD5(RAND())), 1 + RAND(), 6));
-	DECLARE memberId int;
+	DECLARE userId int;
 
-	INSERT IGNORE INTO member (member_email) VALUES (email);
+	INSERT IGNORE INTO user (role, user_email) VALUES ('visitor', email);
 
-	SELECT m.id INTO memberId FROM member m WHERE m.member_email = email;
+	SELECT u.id INTO userId FROM user u WHERE u.user_email = email;
 
-	INSERT INTO reservation (reservation_num, member_id, screening_id) VALUES
-	(randomResNum, memberId, screeningId);
+	INSERT INTO reservation (reservation_num, user_id, screening_id) VALUES
+	(randomResNum, userId, screeningId);
 
 	SELECT r.id INTO reservationId FROM reservation r WHERE r.reservation_num = randomResNum;
 
