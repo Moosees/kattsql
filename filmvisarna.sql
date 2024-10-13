@@ -82,10 +82,11 @@ CREATE TABLE screening (
     FOREIGN KEY (auditorium_id) REFERENCES auditorium (id)
 );
 
-CREATE TABLE member (
+CREATE TABLE user (
     id int unsigned AUTO_INCREMENT PRIMARY KEY,
-    member_email varchar(100) UNIQUE NOT NULL,
-    member_password varchar(255),
+    role varchar(20) NOT NULL,
+    user_email varchar(100) UNIQUE NOT NULL,
+    user_password varchar(255),
     first_name varchar(100),
     last_name varchar(100)
 );
@@ -93,9 +94,9 @@ CREATE TABLE member (
 CREATE TABLE reservation (
     id int unsigned AUTO_INCREMENT PRIMARY KEY,
     reservation_num varchar(20) NOT NULL,
-    member_id int unsigned,
+    user_id int unsigned,
     screening_id int unsigned,
-    FOREIGN KEY (member_id) REFERENCES member (id),
+    FOREIGN KEY (user_id) REFERENCES user (id),
     FOREIGN KEY (screening_id) REFERENCES screening (id)
 );
 
@@ -241,43 +242,43 @@ INSERT INTO screening (start_time, movie_id, auditorium_id) VALUES
 ('2024-11-13 16:00:00', 2, 1),
 ('2024-11-13 20:45:00', 5, 1);
 
-INSERT INTO member (member_email, member_password, first_name, last_name) VALUES
-('yves@maila.se', '123', 'Yves', 'Bananums'),
-('gertrude@gertrude.org', '123', 'Gertrude', 'Bananums'),
-('johan.olsson@exempel.se', '123', 'Johan', 'Olsson'),
-('elin.persson@domän.se', '123', 'Elin', 'Persson'),
-('mats.nilsson@webbpost.se', '123', 'Mats', 'Nilsson'),
-('sara.karlsson@tjänst.net', '123', 'Sara', 'Karlsson'),
-('emil.svensson@minemail.org', '123', 'Emil', 'Svensson'),
-('linda.larsson@domän.org', '123', 'Linda', 'Larsson'),
-('oskar.johansson@snabbmail.se', '123', 'Oskar', 'Johansson'),
-('kristin.andersson@online.se', '123', 'Kristin', 'Andersson'),
-('anton.eriksson@brevlåda.com', '123', 'Anton', 'Eriksson');
+INSERT INTO user (role, user_email, user_password, first_name, last_name) VALUES
+('member', 'yves@maila.se', '123', 'Yves', 'Bananums'),
+('member', 'gertrude@gertrude.org', '123', 'Gertrude', 'Bananums'),
+('member', 'johan.olsson@exempel.se', '123', 'Johan', 'Olsson'),
+('member', 'elin.persson@domän.se', '123', 'Elin', 'Persson'),
+('member', 'mats.nilsson@webbpost.se', '123', 'Mats', 'Nilsson'),
+('member', 'sara.karlsson@tjänst.net', '123', 'Sara', 'Karlsson'),
+('member', 'emil.svensson@minemail.org', '123', 'Emil', 'Svensson'),
+('member', 'linda.larsson@domän.org', '123', 'Linda', 'Larsson'),
+('member', 'oskar.johansson@snabbmail.se', '123', 'Oskar', 'Johansson'),
+('member', 'kristin.andersson@online.se', '123', 'Kristin', 'Andersson'),
+('member', 'anton.eriksson@brevlåda.com', '123', 'Anton', 'Eriksson');
 
-INSERT INTO member (member_email) VALUES
-('sofie.nilsson@mittdomän.se'),
-('viktor.holm@webbmail.net'),
-('julia.fredriksson@företag.org'),
-('isak.lindgren@affär.net'),
-('agnes.söderberg@tjänst.com'),
-('linnea.hansson@kontor.com'),
-('lucas.berglund@nyemail.org'),
-('hanna.nyström@snabbpost.net'),
-('mia.fransson@domän.net'),
-('gustav.sandberg@företag.com'),
-('ida.wikström@minemail.net'),
-('henrik.lund@webbtjänst.com'),
-('emma.berg@mejla.org'),
-('adam.pettersson@domänmail.com'),
-('alice.sundström@info.se'),
-('leo.ahlgren@företagsmail.org'),
-('klara.ström@tjänst.org'),
-('max.blom@webbemail.net'),
-('vilma.andreasson@internetmail.com'),
-('oskar.dahl@affärsmail.net'),
-('nora.sjölund@onlinemail.se');
+INSERT INTO user (role, user_email) VALUES
+('visitor', 'sofie.nilsson@mittdomän.se'),
+('visitor', 'viktor.holm@webbmail.net'),
+('visitor', 'julia.fredriksson@företag.org'),
+('visitor', 'isak.lindgren@affär.net'),
+('visitor', 'agnes.söderberg@tjänst.com'),
+('visitor', 'linnea.hansson@kontor.com'),
+('visitor', 'lucas.berglund@nyemail.org'),
+('visitor', 'hanna.nyström@snabbpost.net'),
+('visitor', 'mia.fransson@domän.net'),
+('visitor', 'gustav.sandberg@företag.com'),
+('visitor', 'ida.wikström@minemail.net'),
+('visitor', 'henrik.lund@webbtjänst.com'),
+('visitor', 'emma.berg@mejla.org'),
+('visitor', 'adam.pettersson@domänmail.com'),
+('visitor', 'alice.sundström@info.se'),
+('visitor', 'leo.ahlgren@företagsmail.org'),
+('visitor', 'klara.ström@tjänst.org'),
+('visitor', 'max.blom@webbemail.net'),
+('visitor', 'vilma.andreasson@internetmail.com'),
+('visitor', 'oskar.dahl@affärsmail.net'),
+('visitor', 'nora.sjölund@onlinemail.se');
 
-INSERT INTO reservation (reservation_num, member_id, screening_id) VALUES
+INSERT INTO reservation (reservation_num, user_id, screening_id) VALUES
 ('A35VGF', 1, 1),
 ('Q9HJ8T', 1, 9),
 ('R4C7YD', 1, 17),
