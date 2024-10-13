@@ -93,7 +93,7 @@ CREATE TABLE user (
 
 CREATE TABLE reservation (
     id int unsigned AUTO_INCREMENT PRIMARY KEY,
-    reservation_num varchar(20) NOT NULL,
+    reservation_num char(6) UNIQUE NOT NULL,
     user_id int unsigned,
     screening_id int unsigned,
     FOREIGN KEY (user_id) REFERENCES user (id),
