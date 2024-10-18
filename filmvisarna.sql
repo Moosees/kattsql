@@ -4,6 +4,7 @@ CREATE TABLE movie (
     title varchar(100) NOT NULL,
     play_time smallint unsigned NOT NULL,
     age smallint unsigned NOT NULL,
+    poster_url varchar(255) NOT NULL,
     movie_info json,
     CHECK (
         JSON_SCHEMA_VALID (
@@ -19,7 +20,6 @@ CREATE TABLE movie (
                     "actors": {"type": "array", "items": {"type": "string"}},
                     "description": {"type": "string"},
                     "trailer": {"type": "string", "description": "A URL to play the movie trailer"},
-                    "poster": {"type": "string"}
                 }
             }',
             movie_info
@@ -118,32 +118,32 @@ CREATE TABLE reservation_ticket (
     FOREIGN KEY (ticket_id) REFERENCES ticket (id)
 );
 
-INSERT INTO movie (title, url_param, play_time, age, movie_info) VALUES
+INSERT INTO movie (title, url_param, play_time, age, poster_url, movie_info) VALUES
 (
-    'Katten i stan', 'katten-i-stan', 68, 15,
+    'Katten i stan', 'katten-i-stan', 68, 15, 'www.film.se',
     '{"year_recorded": 2000, "director": "Poe", "actors": ["Yves", "Gertrude"], "description": "Katten är i stan", "trailer": "youtube.com"}'
 ),
 (
-    'Katten på havet', 'katten-pa-havet', 84, 15,
+    'Katten på havet', 'katten-pa-havet', 84, 15, 'www.film.se',
     '{"year_recorded": 2007, "director": "Gertrude", "actors": ["Inte Yves", "Poe"], "description": "Katten seglar"}'
 ),
 (
-    'Kattparty', 'kattparty', 112, 15, null
+    'Kattparty', 'kattparty', 112, 15, 'www.film.se', null
 ),
 (
-    'Familjekatten', 'familjekatten', 99, 7, null
+    'Familjekatten', 'familjekatten', 99, 7, 'www.film.se', null
 ),
 (
-    'Katten, återkomsten', 'katten-aterkomsten', 118, 11, null
+    'Katten, återkomsten', 'katten-aterkomsten', 118, 11, 'www.film.se', null
 ),
 (
-    'En katt till farsa', 'en-katt-till-farsa', 76, 11, null
+    'En katt till farsa', 'en-katt-till-farsa', 76, 11, 'www.film.se', null
 ),
 (
-    'En värsting till katt', 'en-varsting-till-katt', 88, 7, null
+    'En värsting till katt', 'en-varsting-till-katt', 88, 7, 'www.film.se', null
 ),
 (
-    'Katt, musikalen', 'katt-musikalen', 80, 15, null
+    'Katt, musikalen', 'katt-musikalen', 80, 15, 'www.film.se', null
 );
 
 INSERT INTO genre (genre_name) VALUES
