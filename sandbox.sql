@@ -21,7 +21,7 @@ DELIMITER ;
 
 -- view for all seats and if they are taken or not
 CREATE VIEW vy_all_seats AS
-SELECT m.title, s2.start_time AS start_time, s2.id AS screeningId, a.auditorium_name AS auditorium, 
+SELECT m.title, s2.start_time AS startTime, s2.id AS screeningId, a.auditorium_name AS auditorium, 
 (SELECT json_arrayagg(json_object('seatId',s.id ,'row', s.seat_row,'number', s.seat_num, 'free', IF(rss.reservation_id IS NULL, TRUE, FALSE)))
 FROM res_seat_screen rss
 RIGHT JOIN seat s ON (s.id = rss.seat_id AND rss.screening_id = 3)) AS seats
